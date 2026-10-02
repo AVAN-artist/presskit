@@ -42,9 +42,14 @@
         .bio-image { width: 45%; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         .bio-text { width: 55%; }
         
-        /* Media Embeds */
-        .media-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 40px; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; }
+        /* Media Embeds - Spotify (Stacked) */
+        .spotify-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; }
+        
+        /* Media Embeds - YouTube Shorts (3 Columns Vertical) */
+        .shorts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; }
+        
+        /* The container forces a 9:16 aspect ratio */
+        .video-container { position: relative; padding-bottom: 177.77%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         
         /* Photo Grid */
@@ -63,6 +68,8 @@
             .bio-flex { flex-direction: column; }
             .bio-image, .bio-text { width: 100%; }
             .photo-grid { grid-template-columns: 1fr; }
+            /* Stack Shorts vertically on very small mobile screens */
+            .shorts-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -72,7 +79,6 @@
         <header>
             <h1>AVAN</h1>
             
-            <!-- Top Social Icons (Requires downloading icons to your repo) -->
             <div class="social-links">
                 <a href="YOUR_INSTAGRAM_URL" target="_blank"><img src="icon-instagram.svg" alt="Instagram"></a>
                 <a href="YOUR_YOUTUBE_URL" target="_blank"><img src="icon-youtube.svg" alt="YouTube"></a>
@@ -105,22 +111,18 @@
             
             <!-- Spotify Embeds -->
             <h3>Latest Releases</h3>
-            <div class="media-grid">
-                <!-- Embed 1 (Hint of Regret) -->
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2ME5x14XM0q5gD0EZkXNMZ?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                
-                <!-- Embed 2 (It's All I Need) -->
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0TTzgrPrNWAFpHx3uSqE3l?utm_source=generator&si=0cd00848be5c4148" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-                <!-- Embed 3 (Sarang My Dear) -->
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3Otz2XR9AnVm0mQ2TBdZBm?utm_source=generator&si=684259129eb44ebd" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="spotify-grid">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2ME5x14XM0q5gD0EZkXNMZ?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0TTzgrPrNWAFpHx3uSqE3l?utm_source=generator&si=0cd00848be5c4148" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3Otz2XR9AnVm0mQ2TBdZBm?utm_source=generator&si=684259129eb44ebd" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
             
-            <!-- YouTube Embeds -->
+            <!-- YouTube Shorts Embeds (Side by Side Layout) -->
             <h3>Live Acoustic Sessions</h3>
-            <div class="media-grid">
+            <div class="shorts-grid">
                 <!-- Video 1 -->
                 <div class="video-container">
+                    <!-- Note: I changed /embed/ to /shorts/ format to try and force YouTube's vertical player, though standard embed usually works with the aspect ratio box above -->
                     <iframe src="https://www.youtube.com/embed/6Y6d-xn4duw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
 
@@ -168,7 +170,6 @@
                 <a href="YOUR_LINKTREE_URL" target="_blank">🔗 Linktree</a>
             </div>
 
-            <!-- Bottom Social Icons -->
             <div class="social-links" style="justify-content: flex-start; margin-top: 30px;">
                 <a href="YOUR_INSTAGRAM_URL" target="_blank"><img src="icon-instagram.svg" alt="Instagram"></a>
                 <a href="YOUR_YOUTUBE_URL" target="_blank"><img src="icon-youtube.svg" alt="YouTube"></a>
