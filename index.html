@@ -4,55 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AVAN | Press Kit</title>
+    <!-- Import Google Fonts: Lora for headings, Inter for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-        nav { margin-bottom: 40px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
-        nav a { margin-right: 15px; text-decoration: none; color: #333; font-weight: bold; }
-        section { margin-bottom: 50px; }
-        img { max-width: 100%; height: auto; }
+        /* Global Styles */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.7; 
+            color: #333; 
+            background-color: #faf9f7; /* Very light earthy off-white */
+            margin: 0; 
+            padding: 0;
+        }
+        h1, h2, h3 { font-family: 'Lora', serif; color: #111; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Navigation */
+        header { text-align: center; margin-bottom: 60px; }
+        h1 { font-size: 3rem; letter-spacing: 2px; margin-bottom: 10px; }
+        nav { display: flex; justify-content: center; gap: 25px; border-bottom: 1px solid #ddd; padding-bottom: 20px; }
+        nav a { text-decoration: none; color: #555; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: color 0.3s; }
+        nav a:hover { color: #000; }
+
+        /* Sections */
+        section { margin-bottom: 80px; scroll-margin-top: 40px; }
+        h2 { font-size: 2rem; border-bottom: 2px solid #111; display: inline-block; padding-bottom: 5px; margin-bottom: 25px;}
+        
+        /* Bio Layout (Image next to text on desktop) */
+        .bio-flex { display: flex; gap: 40px; align-items: flex-start; }
+        .bio-image { width: 45%; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .bio-text { width: 55%; }
+        
+        /* Photo Grid */
+        .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .photo-grid img { width: 100%; height: auto; border-radius: 4px; display: block; }
+        .download-btn { display: inline-block; padding: 12px 24px; background-color: #111; color: #fff; text-decoration: none; font-weight: 600; border-radius: 4px; transition: background 0.3s; }
+        .download-btn:hover { background-color: #444; }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .bio-flex { flex-direction: column; }
+            .bio-image, .bio-text { width: 100%; }
+            .photo-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>AVAN</h1>
-        <nav>
-            <a href="#bio">Bio</a>
-            <a href="#listen">Listen</a>
-            <a href="#live">Live</a>
-            <a href="#photos">Photos</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <h1>AVAN</h1>
+            <nav>
+                <a href="#bio">Bio</a>
+                <a href="#listen">Listen</a>
+                <a href="#live">Live</a>
+                <a href="#photos">Photos</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
 
-    <section id="bio">
-        <h2>Bio</h2>
-        <p>AVAN is an independent folk singer-songwriter based in Dublin, blending acoustic guitar, bouzouki, and Irish tin whistle...</p>
-    </section>
+        <section id="bio">
+            <h2>Bio</h2>
+            <div class="bio-flex">
+                <!-- Replace 'your-bio-image.jpg' with your uploaded file's exact name -->
+                <img src="your-bio-image.jpg" alt="AVAN Press Photo" class="bio-image">
+                <div class="bio-text">
+                    <p>AVAN is an independent folk singer-songwriter based in Dublin, blending acoustic guitar, bouzouki, and Irish tin whistle to create intimate, atmospheric soundscapes. With a background living and recording in South Korea, his music bridges deeply personal storytelling with transatlantic folk traditions.</p>
+                    <p>Following the successful release of his 2026 singles "We're Strangers," "Sarang My Dear," and "Hint of Regret," AVAN is currently preparing for extensive touring across the UK and Europe in 2027.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="listen">
-        <h2>Listen</h2>
-        <!-- You can embed Spotify or YouTube players here -->
-        <p>Check out the latest singles "We're Strangers" and "Sarang My Dear".</p>
-    </section>
+        <section id="listen">
+            <h2>Listen</h2>
+            <p><strong>Latest Single: "Hint of Regret"</strong></p>
+            <!-- SPOTIFY EMBED GOES HERE -->
+            <p><em>[Paste your Spotify embed code here]</em></p>
+            
+            <br>
+            <p><strong>Live Acoustic Session</strong></p>
+            <!-- YOUTUBE EMBED GOES HERE -->
+            <p><em>[Paste your YouTube embed code here]</em></p>
+        </section>
 
-    <section id="live">
-        <h2>Live Dates</h2>
-        <ul>
-            <li>November 2026 - London Showcase Tour</li>
-        </ul>
-    </section>
+        <section id="live">
+            <h2>Live Dates</h2>
+            <ul>
+                <li><strong>Nov 2026:</strong> London Showcase Tour (Venues TBA)</li>
+                <li><strong>Sept 2026:</strong> Berlin Open Mic Circuit (Theater im Kino, etc.)</li>
+            </ul>
+        </section>
 
-    <section id="photos">
-        <h2>Hi-Res Photos</h2>
-        <!-- Add image tags here later -->
-        <p><a href="#">Download Press Shots (.zip)</a></p>
-    </section>
+        <section id="photos">
+            <h2>Hi-Res Photos</h2>
+            <div class="photo-grid">
+                <!-- Replace with your actual image file names -->
+                <img src="promo-1.jpg" alt="AVAN Live">
+                <img src="promo-2.jpg" alt="AVAN Portrait">
+            </div>
+            <!-- If you zip your photos and upload them to GitHub, change the href to your zip file name -->
+            <a href="avan-press-shots.zip" class="download-btn">Download All Press Shots (.zip)</a>
+        </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: booking@yourdomain.com</p>
-    </section>
+        <section id="contact">
+            <h2>Contact & Booking</h2>
+            <p>For all booking and press inquiries, please contact:</p>
+            <p><strong>Email:</strong> <a href="mailto:booking@yourdomain.com" style="color:#111; font-weight:600;">booking@yourdomain.com</a></p>
+        </section>
+    </div>
 
 </body>
 </html>
